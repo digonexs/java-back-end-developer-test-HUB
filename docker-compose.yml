@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user # Nome de usuário para autenticação no PostgreSQL
+      POSTGRES_PASSWORD: password # Senha para autenticação no PostgreSQL
+      POSTGRES_DB: cupons # Nome do banco de dados a ser criado no PostgreSQL
+    ports:
+      - "5432:5432" # Mapeamento da porta padrão do PostgreSQL para permitir conexões externas
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672" # Porta padrão do RabbitMQ para troca de mensagens
+      - "15672:15672" # Porta para acessar o plugin de gerenciamento do RabbitMQ (interface web)
