@@ -51,7 +51,7 @@ O `Cupom System` é uma aplicação desenvolvida em Java 17 usando Spring Boot. 
 ```bash
    git clone https://github.com/digonexs/java-back-end-developer-test-HUB.git
    
-   cd cupom-system
+   cd java-back-end-developer-test-HUB
 ```
 ### 2. Configurar o Banco de Dados e RabbitMQ
 - Certifique-se de que o Docker e Docker Compose estão instalados. A aplicação usa PostgreSQL e RabbitMQ, podem ser facilmente configurados usando o `docker-compose.yml` fornecido.
