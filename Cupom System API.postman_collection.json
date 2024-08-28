@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "66a2e354-d1ef-4ae8-a11a-070b1dad901e",
+		"name": "Cupom System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37891188"
+	},
+	"item": [
+		{
+			"name": "Create Coupon 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code44\": \"12345678901234567890123456789012345678901234\",\r\n    \"purchaseDate\": \"2024-08-27\",\r\n    \"totalValue\": 18.40,\r\n    \"companyDocument\": \"35321568000199\",\r\n    \"state\": \"SP\",\r\n    \"produtos\": [\r\n        {\r\n            \"name\": \"Sabão Líquido OMO Lavagem Perfeita 500ml\",\r\n            \"ean\": \"0001\",\r\n            \"unitaryPrice\": 10.20,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"name\": \"CIF Multiuso Cremoso 450ml\",\r\n            \"ean\": \"0002\",\r\n            \"unitaryPrice\": 8.20,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cupons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cupom 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code44\": \"12345678901234567890123456789012345678904321\",\r\n    \"purchaseDate\": \"2024-08-27\",\r\n    \"totalValue\": 96.40,\r\n    \"companyDocument\": \"35321568000199\",\r\n    \"state\": \"SP\",\r\n    \"produtos\": [\r\n        {\r\n            \"name\": \"Sabão Líquido OMO Lavagem Perfeita 500ml\",\r\n            \"ean\": \"0003\",\r\n            \"unitaryPrice\": 15.30,\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"name\": \"CIF Multiuso Cremoso 450ml\",\r\n            \"ean\": \"0004\",\r\n            \"unitaryPrice\": 10.10,\r\n            \"quantity\": 5\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cupons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Coupons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cupons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Coupons for the Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cupons/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cupons",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Coupons for the Code44",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cupons/code44/12345678901234567890123456789012345678904321",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cupons",
+						"code44",
+						"12345678901234567890123456789012345678904321"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Biscoito Rechado Trakinas Sabor Morango\",\r\n    \"ean\": \"0007\",\r\n    \"unitaryPrice\": 2.21,\r\n    \"quantity\": 1,\r\n    \"cupom_id\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products for the Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/produtos/38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"produtos",
+						"38"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
