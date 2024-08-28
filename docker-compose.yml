@@ -14,3 +14,16 @@ services:
     ports:
       - "5672:5672" # Porta padrão do RabbitMQ para troca de mensagens
       - "15672:15672" # Porta para acessar o plugin de gerenciamento do RabbitMQ (interface web)
+      -
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - rabbitmq
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/cupons
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      RABBITMQ_HOST: rabbitmq
